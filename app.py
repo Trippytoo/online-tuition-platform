@@ -51,56 +51,60 @@ db.init_app(app)
 def index():
     return {"message": "Are you ready to learn?"}
 
+api.add_resource(UserResource, "/users", "/users/<int:user_id>")
+
+api.add_resource(LessonResource, "/lessons", "/lessons/<int:id>")
+
 #C.R.U.D for User Model
 #POST /users         → Create a new user (student/tutor)
-@app.post("/users")
-def create_user():
-    return {"message": "User created successfully!"}
+# @app.post("/users")
+# def create_user():
+#     return {"message": "User created successfully!"}
 
 
-#GET /students         → Fetch all users
-@app.get("/students")
-def get_users():
-    return []
+# #GET /students         → Fetch all users
+# @app.get("/students")
+# def get_users():
+#     return []
 
-#GET /students/{id}     → Fetch a specific user
-@app.get("/students/<int:id>")
-def get_user(id):
-    return {"message": f"User with ID {id} fetched successfully!"}
+# #GET /students/{id}     → Fetch a specific user
+# @app.get("/students/<int:id>")
+# def get_user(id):
+#     return {"message": f"User with ID {id} fetched successfully!"}
 
-#PUT /students/{id}     → Update user details
-@app.put("/students/<int:id>")
-def update_user(id):
-    return {"message": f"User with ID {id} updated successfully!"}
+# #PUT /students/{id}     → Update user details
+# @app.put("/students/<int:id>")
+# def update_user(id):
+#     return {"message": f"User with ID {id} updated successfully!"}
 
-#DELETE /students/{id}  → Delete a user
-@app.delete("/students/<int:id>")
-def delete_user(id):
-    return {"message": f"User with ID {id} deleted successfully!"}
+# #DELETE /students/{id}  → Delete a user
+# @app.delete("/students/<int:id>")
+# def delete_user(id):
+#     return {"message": f"User with ID {id} deleted successfully!"}
 
 
-#C.R.U.D for Tutor Profile Model
-#POST /tutors        → Create a tutor profile
-@app.post("/tutors")
-def create_tutor_profile():
-    return {"message": "Tutor profile created successfully!"}
+# #C.R.U.D for Tutor Profile Model
+# #POST /tutors        → Create a tutor profile
+# @app.post("/tutors")
+# def create_tutor_profile():
+#     return {"message": "Tutor profile created successfully!"}
 
-#GET /tutors         → Fetch all tutor profiles
-@app.get("/tutors")
-def get_tutor_profiles():
-    return []
+# #GET /tutors         → Fetch all tutor profiles
+# @app.get("/tutors")
+# def get_tutor_profiles():
+#     return []
 
-#GET /tutors/{id}    → Fetch a specific tutor
-@app.get("/tutors/<int:id>")
-def get_tutor_profile(id):
-    return {"message": f"Tutor profile with ID {id} fetched successfully!"}
+# #GET /tutors/{id}    → Fetch a specific tutor
+# @app.get("/tutors/<int:id>")
+# def get_tutor_profile(id):
+#     return {"message": f"Tutor profile with ID {id} fetched successfully!"}
 
-#PUT /tutors/{id}    → Update tutor profile
-@app.put("/tutors/<int:id>")
-def update_tutor_profile(id):
-    return {"message": f"Tutor profile with ID {id} updated successfully!"}
+# #PUT /tutors/{id}    → Update tutor profile
+# @app.put("/tutors/<int:id>")
+# def update_tutor_profile(id):
+#     return {"message": f"Tutor profile with ID {id} updated successfully!"}
 
-#DELETE /tutors/{id} → Delete a tutor profile
-@app.delete("/tutors/<int:id>")
-def delete_tutor_profile(id):
-    return {"message": f"Tutor profile with ID {id} deleted successfully!"}
+# #DELETE /tutors/{id} → Delete a tutor profile
+# @app.delete("/tutors/<int:id>")
+# def delete_tutor_profile(id):
+#     return {"message": f"Tutor profile with ID {id} deleted successfully!"}

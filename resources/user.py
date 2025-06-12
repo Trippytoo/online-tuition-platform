@@ -11,7 +11,7 @@ class UserResource(Resource):
         return {"messaage": "User created"}
 
     def patch(self, user_id):
-        return {"message": "User updated"}
+        return {"message": f"User with ID {user_id} updated successfully!"}
 
     def delete(self, user_id):
-        return {"message": "User deleted"} 
+        return {"message": f"User with ID {user_id} deleted successfully!"} 
